@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link 
-        rel="shortcut icon" 
-        href="{{ url_for('static', filename='images/weather.png') }}" 
-        type="image/x-icon"
-    />
-    <link 
-        rel="stylesheet" 
-        href="{{ url_for('static', filename='css/style.css') }}" 
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-</head>
-<body>
-    <h1>Weather App</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <link 
+            rel="shortcut icon" 
+            href="{{ url_for('static', filename='images/weather.png') }}" 
+            type="image/x-icon"
+        />
+        <link 
+            rel="stylesheet" 
+            href="{{ url_for('static', filename='css/style.css') }}" 
+        />
+        <link
+        href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+        rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="WRAPPER">
+            <header>Weather App</header>
+            <div class="line"></div>
+            <section class="input-part">
+                <p class="info-txt"></p>
+                <div class="content">
+                    <form action="/results" method="post">
+                        <input type="text" name="city" spellcheck="false" placeholder="Enter city name..." required />
+                        <br />
+                        <br />
+                        <button>Get Weather</button>
+                        {{error}}
+                    </form>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Weather and Location -->
+        <div>
+            <section class="weather-part">
+                <img src="http://openweathermap.org/img/wn/{{iconcode}}.png" alt="WeatherIcon" />
+                <div>
+                    <span class="numb">{{temp}}</span>
+                    <span class="deg">°</span>C
+                </div>
+                <div class="weather">{{weather}}</div>
+                <div class="location">
+                    <i class="bx bx-mp"></i>
+                    <span>{{city}} , {{country}}</span>
+                </div>
+                <div class="button-details">
+                    <div class="collumn feels">
+                        <i class="bx bxs-thermometer"></i>
+                        <div class="temp">
+                            <span class="numb-2">{{feels_like}}</span>
+                            <span class="deg">°</span>C
+                        </div>
+                        <p>Feels Like</p>
+                    </div>
+                </div>
+                <div class="column humidity">
+                    <i class="bx bxs-droplet-half"></i>
+                    <div class="details">
+                        <span>{{humidity}}</span>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
 </html>
