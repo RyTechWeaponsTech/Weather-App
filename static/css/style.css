@@ -111,3 +111,18 @@ body {
 .input-part input::placeholder {
     color: #bfbfbf;
 }
+
+.seperator::before {
+    content: "or";
+    color: #b3b3b3;
+    font-size: 19px;
+    padding: 0 15px;
+    background: #fff;
+  }
+
+  .input-part button {
+    color: #fff;
+    cursor: pointer;
+    background: #5800c3;
+    transition: 0.3s ease;
+  }
