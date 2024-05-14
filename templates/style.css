@@ -120,9 +120,107 @@ body {
     background: #fff;
   }
 
-  .input-part button {
+.input-part button {
     color: #fff;
     cursor: pointer;
     background: #5800c3;
     transition: 0.3s ease;
-  }
+}
+
+.input-part button:hover {
+    color: #fff;
+    cursor: pointer;
+    background: #37017a;
+    transition: 0.3s ease;
+}
+
+.wrapper .weather-part {
+    display: none;
+    margin: 30px 0 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.weather-part .temp {
+    display: flex;
+    font-weight: 500;
+    font-size: 72px;
+}
+
+.weather-part .temp .numb {
+    font-weight: 600;
+}
+
+.weather-part .temp .deg {
+    font-size: 40px;
+    display: block;
+    margin: 10px 5px 0 0;
+}
+
+.weather-part .weather {
+    font-size: 21px;
+    text-align: center;
+    margin: -5px 20px 15px;
+}
+
+.weather-part .location {
+    display: flex;
+    font-size: 20px;
+    padding: 0 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.location i {
+    font-size: 20px;
+    margin: 4px 5px 0 0;
+}
+
+.weather-part .bottom-details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #ffffff;
+}
+
+.bottom-details .column {
+    display: flex;
+    width: 100px;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.column i {
+    color: rgb(0, 153, 255);
+    font-size: 40px;
+}
+
+.column .humidity {
+    border-left: 1px solid #ccc;
+}
+
+.column .details {
+    margin-left: 3px;
+}
+
+.details .temp, .humidity span {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -3px;
+}
+
+.column .details p {
+    font-size: 14px;
+    margin-top: -6px;
+}
+
+.humidity i {
+    font-size: 37px;
+}
+
+.title {
+    font-size: 60px;
+}
