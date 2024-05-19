@@ -1,6 +1,6 @@
 # **PROJECT: WEATHER APP**
 
-# How to use
+## How to use
 
 - create local environment by run
     ```bash
