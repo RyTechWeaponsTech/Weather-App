@@ -22,16 +22,16 @@
   <body>
     <div class="wrapper">
       <header>Weather App</header>
-      <div class="line"></div>
+      <div class="lines"></div>
       <section class="input-part">
         <p class="info-txt"></p>
         <div class="content">
-          <form action="/results" method="post">
+          <form method="post" action="/results">
             <input
               type="text"
               name="city"
               spellcheck="false"
-              placeholder="Enter city name..."
+              placeholder="Enter city name"
               required
             />
             <br />
@@ -43,12 +43,12 @@
       </section>
     </div>
 
-    <!-- Weather and Location -->
+    <!-- The temperature & location -->
     <div>
       <section class="weather-part">
         <img
           src="http://openweathermap.org/img/wn/{{iconcode}}.png"
-          alt="WeatherIcon"
+          alt="Weather Icon"
         />
         <div class="temp">
           <span class="numb">{{temp}}</span>
@@ -67,15 +67,15 @@
                 <span class="numb-2">{{feels_like}}</span>
                 <span class="deg">°</span>C
               </div>
+              <p>Feels like</p>
             </div>
-            <p>Feels Like</p>
           </div>
-        </div>
-        <div class="column humidity">
-          <i class="bx bxs-droplet-half"></i>
-          <div class="details">
-            <span>{{humidity}}</span>
-            <p>Humidity</p>
+          <div class="column humidity">
+            <i class="bx bxs-droplet-half"></i>
+            <div class="details">
+              <span> {{humidity}}</span>
+              <p>Humidity</p>
+            </div>
           </div>
         </div>
       </section>
