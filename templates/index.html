@@ -1,73 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weather App</title>
-        <link 
-            rel="shortcut icon" 
-            href="{{ url_for('static', filename='images/weather.png') }}" 
-            type="image/x-icon"
-        />
-        <link 
-            rel="stylesheet" 
-            href="{{ url_for('static', filename='css/style.css') }}" 
-        />
-        <link
-        href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
-        rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="wrapper">
-            <header>Weather App</header>
-            <div class="line"></div>
-            <section class="input-part">
-                <p class="info-txt"></p>
-                <div class="content">
-                    <form action="/results" method="post">
-                        <input type="text" name="city" spellcheck="false" placeholder="Enter city name..." required />
-                        <br />
-                        <br />
-                        <button>Get Weather</button>
-                        {{error}}
-                    </form>
-                </div>
-            </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/weather.png') }}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Weather App</header>
+      <div class="line"></div>
+      <section class="input-part">
+        <p class="info-txt"></p>
+        <div class="content">
+          <form action="/results" method="post">
+            <input
+              type="text"
+              name="city"
+              spellcheck="false"
+              placeholder="Enter city name..."
+              required
+            />
+            <br />
+            <br />
+            <button>Get Weather</button>
+            {{error}}
+          </form>
         </div>
-        
-        <!-- Weather and Location -->
-        <div>
-            <section class="weather-part">
-                <img src="http://openweathermap.org/img/wn/{{iconcode}}.png" alt="WeatherIcon" />
-                <div>
-                    <span class="numb">{{temp}}</span>
-                    <span class="deg">°</span>C
-                </div>
-                <div class="weather">{{weather}}</div>
-                <div class="location">
-                    <i class="bx bx-map"></i>
-                    <span>{{city}} , {{country}}</span>
-                </div>
-                <div class="bottom-details">
-                    <div class="collumn feels">
-                        <i class="bx bxs-thermometer"></i>
-                        <div class="temp">
-                            <span class="numb-2">{{feels_like}}</span>
-                            <span class="deg">°</span>C
-                        </div>
-                        <p>Feels Like</p>
-                    </div>
-                </div>
-                <div class="column humidity">
-                    <i class="bx bxs-droplet-half"></i>
-                    <div class="details">
-                        <span>{{humidity}}</span>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-            </section>
+      </section>
+    </div>
+
+    <!-- Weather and Location -->
+    <div>
+      <section class="weather-part">
+        <img
+          src="http://openweathermap.org/img/wn/{{iconcode}}.png"
+          alt="WeatherIcon"
+        />
+        <div class="temp">
+          <span class="numb">{{temp}}</span>
+          <span class="deg">°</span>C
         </div>
-    </body>
+        <div class="weather">{{weather}}</div>
+        <div class="location">
+          <i class="bx bx-map"></i>
+          <span>{{city}} , {{country}}</span>
+        </div>
+        <div class="bottom-details">
+          <div class="column feels">
+            <i class="bx bxs-thermometer"></i>
+            <div class="details">
+              <div class="temp">
+                <span class="numb-2">{{feels_like}}</span>
+                <span class="deg">°</span>C
+              </div>
+            </div>
+            <p>Feels Like</p>
+          </div>
+        </div>
+        <div class="column humidity">
+          <i class="bx bxs-droplet-half"></i>
+          <div class="details">
+            <span>{{humidity}}</span>
+            <p>Humidity</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
